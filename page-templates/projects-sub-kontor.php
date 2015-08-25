@@ -33,7 +33,7 @@ get_header(); ?>
 								array(
 												'taxonomy' => 'projektkategori',
 												'field' => 'id',
-												'terms' => '11'
+												'terms' => '33'
 												)),
 												
 							'orderby'          => 'post_date',
