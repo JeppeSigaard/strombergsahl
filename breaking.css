@@ -1,0 +1,132 @@
+#introduktion{
+	/*overflow: visible;*/
+	}
+
+.breaking-right {
+	float:left;
+	vertical-align:top;
+	display: inline-block;
+	width: 66.666667%;
+	height: 360px;
+	}
+.breaking-right .breaking-right-inner{
+	display:block;
+	margin: 10px;
+	height:340px;
+	background: url('http://enss.dk/wp-content/uploads/2013/11/Forside-sumtravej.jpg');
+	background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-ms-background-size:cover;
+	overflow:hidden;
+	}
+
+.breaking-right .breaking-right-inner>img{
+	width:100%;
+	margin:auto;
+	}
+.breaking-left{
+	position:relative;
+	height: 360px;
+	vertical-align:top;
+	display: inline-block;
+	width: 33.3333333%;
+	}
+
+.breaking-rm-center{
+	position: absolute;
+	width: 100%;
+	bottom: 10px;
+	margin-left:-10px;
+	}
+
+.breaking-left .breaking-post{
+	margin:10px;
+	}
+
+.breaking-left .breaking-post h1>a {
+	display: block;
+	font-size: 2rem;
+	margin-bottom: 10px;
+	}
+.breaking-left .breaking-post .breaking-entry{
+	line-height: 1.714285714;
+	}
+.breaking-post a.breaking-read-more {
+	text-align:center;
+	text-transform:uppercase;
+	background:#006b52;
+	display: block;
+	padding: 10px 20px 8px;
+	width: 90px;
+	font-size: 18px;
+	margin:50px auto 0px ;
+	color:#fff;
+	font-family: klavika-regular, sans-serif;
+	}
+.breaking-post a.breaking-read-more:hover {	
+	box-shadow: 0px 0px 2px #333;
+}
+
+/* fra 1240px til 980px = 960px sidebredde */
+@media screen and (max-width:1240px) and (min-width:980px){	
+	
+	.breaking-left, .breaking-right{
+		height:340px;
+		}
+	
+	.breaking-right .breaking-right-inner{
+		height:320px;
+		}
+		
+	.breaking-rm-center {
+		bottom: 10px;
+		}	
+	}
+	
+/* Fra 980px - 720px (safe) = tablet */
+@media screen and (max-width:980px){
+	#introduktion{height:auto!important;}
+	.breaking-right, .breaking-left{
+		width:50%;
+		height:270px;
+		}
+	.breaking-right .breaking-right-inner{
+		height:250px;
+		}
+		
+	.breaking-post a.breaking-read-more {
+		margin-top:20px;
+		}
+	
+	.breaking-rm-center{
+		bottom:10px;
+	width: 100%;
+	}
+	
+	}
+	
+/* Mobilvisning */	
+@media screen and (max-width:600px){
+.breaking-right, .breaking-left{
+		display:block;
+		width:auto;
+		height:auto;
+		float:none;
+
+}
+.breaking-right .breaking-right-inner{
+	height:170px;
+	}
+
+	.breaking-post {
+		padding-bottom:50px;
+		}
+		.breaking-rm-center{
+		bottom:0px;
+		
+		}
+
+.breaking-right{
+	height:170px;
+	}

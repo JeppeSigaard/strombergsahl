@@ -1,0 +1,29 @@
+#mailchimp_header {
+font-size: 2.5rem;
+line-height: 1.2;
+font-weight: normal;
+color: #006b52;
+}
+
+#mc_signup_form {
+padding: 5% 10%;
+background: rgba(0,107,87,0.1);
+box-shadow: 0px 0px 5px #ddd;
+}
+
+#mc_signup_form .mc_input {
+padding: 10px;
+font-size:1.2rem;
+}
+
+#mc_signup_submit {
+margin-top: 1.5em;
+width: 40%!important;
+font-size: 1.3rem;
+color: #fff;
+background: #006b52;
+}
+
+.mc_merge_var label{
+	display:none;
+	}

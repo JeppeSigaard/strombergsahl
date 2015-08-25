@@ -1,0 +1,132 @@
+
+
+.sliderwrapper{
+	position: relative!important; /*leave as is*/
+	overflow: hidden!important; /*leave as is*/
+	border-bottom-width: 6px!important;
+	width: 500px!important; /*width of featured content slider*/
+	height: 350px!important;
+	float:left!important;
+}
+.sliderwrapper img {
+	border-radius:0px!important;
+	width:500px!important;
+	height:350px!important;
+	
+}
+
+
+
+.sliderwrapper .contentdiv{
+	
+	visibility: hidden!important; /*leave as is*/
+	position: absolute!important; /*leave as is*/
+	left: 0!important;  /*leave as is*/
+	top: 0!important;  /*leave as is*/
+	background: white!important;
+	width: 390px!important; /*width of content DIVs within slider. Total width should equal slider's inner width (390+5+5=400) */
+	height: 100%!important;
+	filter:progid:DXImageTransform.Microsoft.alpha(opacity=100)!important;
+	-moz-opacity: 1!important;
+	opacity: 1!important;
+}
+
+.pagination{
+	width: 500px!important; /*Width of pagination DIV. Total width should equal slider's outer width (400+10+10=420)*/
+	text-align: left!important;
+	margin-top:2px!important;
+	background-color: #004b27!important;
+	height:30px!important;
+		border-radius:0px!important;
+	float:left!important;
+	line-height:20px!important;
+
+}
+
+.pagination a{
+		border-radius:0px!important;
+	
+	text-decoration: none!important; 
+	color: #fff!important;
+	border-right:solid 1px #FFF!important;
+	padding-top:5px!important;
+	padding-bottom:5px!important;
+	padding-left:10px!important;
+	padding-right:10px!important;
+	float:left!important;
+	
+	
+}
+
+.pagination a:hover, .pagination a.selected{
+	color: #000!important;
+	background-color:#060!important;
+
+}
+
+.contentslide_wrapper {
+	width:752px!important;
+	position:relative!important;
+	min-height:auto!important;
+	clear:both!important;
+	padding-top:30px!important;
+	
+	
+}
+.slide_desc {
+	width:250px!important;
+	min-height:382px!important;
+	height:auto!important;
+	background:#e1ffe1!important;
+		float:left!important;
+		position:absolute!important;
+		right:0px!important;
+	border-radius:0px!important;
+	
+}
+
+
+.slide_desc ul {
+	list-style:none!important;
+	padding:20px 20px 20px 20px!important;
+	margin:0px!important;
+}
+
+.slide_desc ul li {
+	line-height:1.28!important;
+	margin:0!important;
+	margin-bottom:3px!important;
+}
+
+.slide_desc ul li strong{
+	font-family:klavika-medium;
+}
+
+.textdesc_slide {
+	width:500px!important;
+	float:left!important;
+		border-bottom:dashed #004b27 1px!important;
+		border-radius:0px!important;
+}
+
+.textdesc_slide p {
+	width:500px!important;
+	padding-bottom:20px!important;
+	float:left!important;
+}
+
+
+.textdesc_downl {
+	margin-top:40px!important;
+	width:200px!important;
+	padding-right:40px!important;
+	float:right!important;
+}
+
+.textdesc_downl a {
+	color:#090!important;
+}
+
+.textdesc_downl a:hover {
+	color:#004b27!important;
+}
