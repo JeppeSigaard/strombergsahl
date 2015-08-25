@@ -35,7 +35,7 @@ get_header(); ?>
        <div class="sidebar-right">
         
         <?php if ( dynamic_sidebar('page_widget_renovering') ) : elseif ( dynamic_sidebar('page_widget_kompetencer') ) : elseif ( dynamic_sidebar('sidebar-1') ) : else  : endif; ?>
-        
+         <?php get_template_part('sidebar','ct-form') ?>
         </div>
        
      	<div class="sidebar-mobile">

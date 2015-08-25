@@ -776,6 +776,7 @@ add_action('wp_enqueue_scripts', 'no_more_jquery');
 function no_more_jquery(){
     wp_deregister_script('jquery');
 	wp_enqueue_script( 'jq', get_bloginfo('url').'/js/jquery.js', false, '', false );
+	wp_enqueue_script( 'form', get_template_directory_uri().'/js/form.js', false, '', true );
 }
 
 
@@ -934,6 +935,43 @@ require 'functions/byggerating.php';
 
 
 
+add_action( 'init', 'smamo_add_email' );
+
+function smamo_add_email() {
+	register_post_type( 'email', array(
+		
+        'menu_icon' 		 => 'dashicons-email',
+		'public'             => false,
+		'publicly_queryable' => false,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => false,
+		'rewrite'            => array( 'slug' => 'email' ),
+		'capability_type'    => 'post',
+		'has_archive'        => false,
+		'hierarchical'       => false,
+		'menu_position'      => 99,
+		'supports'           => array( 'title' ),
+        'labels'             => array(
+            
+            'name'               => _x( 'Emails', 'post type general name', 'smamo' ),
+            'singular_name'      => _x( 'Email', 'post type singular name', 'smamo' ),
+            'menu_name'          => _x( 'Emails', 'admin menu', 'smamo' ),
+            'name_admin_bar'     => _x( 'Emails', 'add new on admin bar', 'smamo' ),
+            'add_new'            => _x( 'Tilføj ny ', 'email', 'smamo' ),
+            'add_new_item'       => __( 'Tilføj ny', 'smamo' ),
+            'new_item'           => __( 'Ny email', 'smamo' ),
+            'edit_item'          => __( 'Rediger', 'smamo' ),
+            'view_item'          => __( 'Se email', 'smamo' ),
+            'all_items'          => __( 'Se alle', 'smamo' ),
+            'search_items'       => __( 'Find email', 'smamo' ),
+            'parent_item_colon'  => __( 'Forældre:', 'smamo' ),
+            'not_found'          => __( 'Start med at oprette email.', 'smamo' ),
+            'not_found_in_trash' => __( 'Papirkurven er tom.', 'smamo' ),
+            ),
+	   )
+    );
+}
 
 
 /*  Thumbnail upscale

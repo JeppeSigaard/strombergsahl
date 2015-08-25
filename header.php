@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <?php $current_id = $wp_query->post->ID; ?>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta charset="utf8" />
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <meta property="og:title" content="<?php wp_title( '|', true, 'right' ); ?>" />
 <meta property="og:type" content="article" />
@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="<?php bloginfo( 'url' ); ?>/wp-content/themes/enss/slider.css"/>
 <link rel="stylesheet" href="<?php bloginfo( 'url' ); ?>/wp-content/themes/enss/breaking.css"/>
 <link rel="stylesheet" href="<?php bloginfo( 'url' ); ?>/wp-content/themes/enss/mailchimp.css"/>
+<link rel="stylesheet" href="<?php bloginfo( 'url' ); ?>/wp-content/themes/enss/scss/main.css"/>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" href="<?php bloginfo( 'url' ); ?>/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
 <?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
@@ -41,6 +42,7 @@
   ga('send', 'pageview');
 
 </script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body <?php body_class(); ?>>

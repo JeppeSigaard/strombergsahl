@@ -1,0 +1,17 @@
+.g-recaptcha{
+    
+    margin-top:20px;
+    box-sizing: border-box;
+    
+    
+    *{
+        //max-width:100%!important;
+        //margin:0 auto;
+    }
+    
+    iframe{
+        transform: scale(.87);
+        transform-origin: left;
+    }
+    
+}

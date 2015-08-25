@@ -261,7 +261,96 @@ function projects_boxes( $meta_boxes )
 
 		)
 	);
+    
+    
+    
 
+
+
+    $meta_boxes[] = array(
+        'id' => 'ct-form',
+        'title' => __( 'Opret en kontaktformular til denne side', 'rwmb' ),
+        'pages' => array('page'),
+        'context' => 'normal',
+        'priority' => 'default',
+        'autosave' => true,
+        'fields' => array(
+
+            array(
+                'name'  => __( 'Aktiver for siden', 'rwmb' ),
+                'id'    => "ct-form-active",
+                'type' => 'checkbox',
+                'std'    => '0',
+                ),
+
+            array(
+                'name'  => __( 'Følgetekst', 'rwmb' ),
+                'id'    => "ct-form-text",
+                'type' => 'textarea',
+                'placeholder'   => 'Skriv en tekst, der vises inden formularen',
+                ),
+
+            array(
+                'name'  => __( 'Modtager', 'rwmb' ),
+                'id'    => "ct-form-receiver",
+                'type' => 'email',
+                'desc' => __('Hvis email efterlades tom, anvendes info@enss.dk','smamo'),
+                'placeholder'   => 'info@enss.dk',
+                ),
+        ),
+    );
+
+    $meta_boxes[] = array(
+        'id' => 'info',
+        'title' => __( 'Information', 'rwmb' ),
+        'pages' => array('email'),
+        'context' => 'normal',
+        'priority' => 'default',
+        'autosave' => true,
+        'fields' => array(
+
+           
+
+            array(
+                'name'  => __( 'Sendt via form på', 'rwmb' ),
+                'id'    => "post_id",
+                'type' => 'text',
+                ),
+
+            array(
+                'name'  => __( 'Sendt til', 'rwmb' ),
+                'id'    => "email_rec",
+                'type' => 'text',
+                ),
+
+            array(
+                'name'  => __( 'Navn', 'rwmb' ),
+                'id'    => "navn",
+                'type' => 'text',
+                ),
+
+            array(
+                'name'  => __( 'Email', 'rwmb' ),
+                'id'    => "email",
+                'type' => 'text',
+                ),
+
+            array(
+                'name'  => __( 'Telefon', 'rwmb' ),
+                'id'    => "telefon",
+                'type' => 'text',
+                ),
+
+            array(
+                'name'  => __( 'Jeg er:', 'rwmb' ),
+                'id'    => "kommentar",
+                'type' => 'textarea',
+                ),
+        ),
+    );
+
+    
+    
 	return $meta_boxes;
 }
 

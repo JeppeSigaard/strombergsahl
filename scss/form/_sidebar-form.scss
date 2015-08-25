@@ -1,0 +1,135 @@
+#sidebar-form{
+    form{
+        position:relative;
+        background:rgba(black,.03);
+        padding:20px 15px 10px;
+        max-width: 270px;
+        margin-top:20px;
+        font-size: 14px;
+        
+        &.loading{
+        
+            &:after{
+                content:'';
+                position:absolute;
+                z-index:1000;
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+                background:rgba(white,.7) url(../libs/img/loading.gif) no-repeat center;
+                
+            }
+            
+        
+        }
+        
+        &.complete{
+            
+            input,a,textarea,label,p,.radio, .g-recaptcha{
+                display: none;
+            }
+            
+        }
+        
+    }
+    
+    p{
+        margin-bottom: 20px;
+        font-weight: bold;
+        //font-size: .8rem;
+        line-height:1.4;
+        color:#333;
+        position:relative;
+        
+        &:after{
+            content: '';
+            border-top: 1px solid rgba(black,.1);
+            position: absolute;
+            bottom: -5px;
+            left: 0px;
+            width: 100%;
+            opacity: .5;
+        }
+    }
+    
+    label{
+        display: block;
+        //font-size: .8rem;
+        margin:15px 0px 5px;
+    }
+    
+    input, textarea{
+        display: block;
+        resize: none;
+        width:100%;
+        border: 1px solid rgba(black,.1);
+        outline: none;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: 1.4;
+        padding:5px;
+        box-sizing:border-box;
+        
+        &:focus{
+            border: 1px solid rgba(50,50,50,.3);
+        }
+    }
+
+    a{
+        margin:20px 0px 0px;
+        text-align: center;
+        display: block;
+        padding:10px 0px;
+        display: block;
+        background:#006b52;
+        color:white;
+    
+        &:hover{
+            background: #d3d3d3;
+            color:#333;
+        }
+        
+    }
+    
+    .ct-form-message{
+    
+        margin: 0px 0px 20px;
+        border-top: 3px solid #31883f;
+        color: #31883f;
+        box-shadow: 1px 1px 10px rgba(0,0,0,.4);
+        padding: 12px 10px 12px 10px;
+        line-height: 1.4;
+        position:relative;
+        
+        
+        &.error{
+            border-top-color:#883131;
+            color:#883131;
+            
+        }
+    
+    }
+    
+    .radio{
+        span{
+            margin-top:10px;
+            display: block;
+        }
+        
+        div{
+            position:relative;
+            padding-left:30px;
+            margin-top:10px;
+            label,input{
+                width:auto;
+                display: inline;
+            }
+            
+            input{
+                position:absolute;
+                left:0px;
+            }
+        }
+    }
+}
