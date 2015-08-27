@@ -4,11 +4,25 @@ $ct_form_active = get_post_meta(get_the_ID(),'ct-form-active',true);
 if($ct_form_active && $ct_form_active == '1') :
 
 $ct_form_text = get_post_meta(get_the_ID(),'ct-form-text',true);
+
 $ct_form_receiver = get_post_meta(get_the_ID(),'ct-form-receiver',true);
 if($ct_form_receiver == ''){
     $footer_options = get_option('footer_options');
-    $ct_form_receiver = 'info@enss.dk';
+    $ct_form_receiver = 'sesa@enss.dk';
 }
+
+$ct_form_receiver_2 = get_post_meta(get_the_ID(),'ct-form-receiver-2',true);
+if($ct_form_receiver_2 == ''){
+    $footer_options = get_option('footer_options');
+    $ct_form_receiver_2 = 'sesa@enss.dk';
+}
+
+$ct_form_receiver_3 = get_post_meta(get_the_ID(),'ct-form-receiver-3',true);
+if($ct_form_receiver_3 == ''){
+    $footer_options = get_option('footer_options');
+    $ct_form_receiver_3 = 'kmh@enss.dk';
+}
+
 ?>
 <div id="sidebar-form">
     <form method="POST" class="ct-form" id="ct-form-<?php the_ID(); ?>" action="<?php echo get_template_directory_uri() ?>/ajax/form.php">
@@ -16,6 +30,8 @@ if($ct_form_receiver == ''){
         <input type="hidden" name="locale" value="<?php echo get_locale(); ?>"/>
         <input type="hidden" name="post_id" value="<?php the_ID(); ?>"/>
         <input type="hidden" name="email_rec" value="<?php echo $ct_form_receiver ?>"/>
+        <input type="hidden" name="email_rec_2" value="<?php echo $ct_form_receiver_2 ?>"/>
+        <input type="hidden" name="email_rec_3" value="<?php echo $ct_form_receiver_3 ?>"/>
         <div>
             <strong><?php echo apply_filters('the_content',$ct_form_text); ?></strong>
         </div>
@@ -32,6 +48,11 @@ if($ct_form_receiver == ''){
         <div>
             <label for="telefon">Mit telefonnummer</label>
             <input name="telefon" placeholder="88 88 88 88"/>
+        </div>
+        
+        <div>
+            <label for="company">Jeg arbejder hos</label>
+            <input name="company" placeholder="Firmanavn a/s"/>
         </div>
 
         <div class="radio">

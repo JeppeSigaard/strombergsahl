@@ -33,6 +33,8 @@ $formdata = array(
     'post' => (isset($_POST['post_id'])) ? get_post(wp_strip_all_tags($_POST['post_id'])) : false,
     
     'email_rec' => (isset($_POST['email_rec']) && is_email($_POST['email_rec']) ) ? wp_strip_all_tags($_POST['email_rec']) : false,
+    'email_rec_2' => (isset($_POST['email_rec_2']) && is_email($_POST['email_rec_2']) ) ? wp_strip_all_tags($_POST['email_rec_2']) : false,
+    'email_rec_3' => (isset($_POST['email_rec_3']) && is_email($_POST['email_rec_3']) ) ? wp_strip_all_tags($_POST['email_rec_3']) : false,
 
     'navn' => (isset($_POST['navn'])) ? wp_strip_all_tags($_POST['navn']) : false,
     
@@ -77,6 +79,16 @@ $error_msgs = array(
     ),
     
     'email_rec' => array(
+        'da_DK' => 'Modtageradresse er ikke indstillet korrekt',
+        'en_US' => 'Receiver address not received'
+    ),
+    
+    'email_rec_2' => array(
+        'da_DK' => 'Modtageradresse er ikke indstillet korrekt',
+        'en_US' => 'Receiver address not received'
+    ),
+    
+    'email_rec_3' => array(
         'da_DK' => 'Modtageradresse er ikke indstillet korrekt',
         'en_US' => 'Receiver address not received'
     ),
@@ -148,8 +160,18 @@ if(is_wp_error($make_post)){
     exit;
 }
 
+
+
+$final_receiver = $formdata['email_rec']
+if($formdata['function'] === 2){
+    $final_receiver = $formdata['email_rec_2'];
+}
+if($formdata['function'] === 3){
+    $final_receiver = $formdata['email_rec_3'];
+}
+
 if($formdata['locale']){update_post_meta($make_post, 'locale', $formdata['locale']);}
-if($formdata['email_rec']){update_post_meta($make_post, 'email_rec', $formdata['email_rec']);}
+if($final_receiver){update_post_meta($make_post, 'email_rec', $final_receiver);}
 if($formdata['post']){update_post_meta($make_post, 'post_id', $formdata['post']->ID);}
 if($formdata['navn']){update_post_meta($make_post, 'navn', $formdata['navn']);}
 if($formdata['email']){update_post_meta($make_post, 'email', $formdata['email']);}
@@ -184,7 +206,7 @@ $body .= 'Venlig hilsen serveren';
 $kopi = ($formdata['locale'] == 'da_DK') ? 'Kopi: ' : 'Copy: ' ;
 
 // Send mail til email_rec
-$send = sendEmail( $formdata['navn'], $formdata['email'], $formdata['email_rec'], $titel, $body );
+$send = sendEmail( $formdata['navn'], $formdata['email'], $final_receiver, $titel, $body );
 if(!$send){
     $response['error'] = 'Kunne ikke sende beskeden til Grønbech, prøv igen';
     echo json_encode($response);
@@ -192,7 +214,7 @@ if(!$send){
 }
 
 // Send kopi til afsender
-$send_copy = sendEmail( get_bloginfo('name'), $formdata['email_rec'], $formdata['email'], $kopi.$titel, $body );
+$send_copy = sendEmail( get_bloginfo('name'), $final_receiver, $formdata['email'], $kopi.$titel, $body );
 if(!$send){
     $response['error'] = 'Kunne ikke sende kopi af beskeden';
     echo json_encode($response);

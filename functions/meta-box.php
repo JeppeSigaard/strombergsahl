@@ -291,11 +291,27 @@ function projects_boxes( $meta_boxes )
                 ),
 
             array(
-                'name'  => __( 'Modtager', 'rwmb' ),
+                'name'  => __( 'Modtager for bygherrer', 'rwmb' ),
                 'id'    => "ct-form-receiver",
                 'type' => 'email',
-                'desc' => __('Hvis email efterlades tom, anvendes info@enss.dk','smamo'),
-                'placeholder'   => 'info@enss.dk',
+                'desc' => __('Hvis email efterlades tom, anvendes sesa@enss.dk','smamo'),
+                'placeholder'   => 'sesa@enss.dk',
+                ),
+            
+            array(
+                'name'  => __( 'Modtager for arkitekter', 'rwmb' ),
+                'id'    => "ct-form-receiver-2",
+                'type' => 'email',
+                'desc' => __('Hvis email efterlades tom, anvendes sesa@enss.dk','smamo'),
+                'placeholder'   => 'sesa@enss.dk',
+                ),
+            
+            array(
+                'name'  => __( 'Modtager for samarbejder', 'rwmb' ),
+                'id'    => "ct-form-receiver-3",
+                'type' => 'email',
+                'desc' => __('Hvis email efterlades tom, anvendes kmh@enss.dk','smamo'),
+                'placeholder'   => 'kmh@enss.dk',
                 ),
         ),
     );
@@ -338,6 +354,12 @@ function projects_boxes( $meta_boxes )
             array(
                 'name'  => __( 'Telefon', 'rwmb' ),
                 'id'    => "telefon",
+                'type' => 'text',
+                ),
+            
+            array(
+                'name'  => __( 'Firma', 'rwmb' ),
+                'id'    => "company",
                 'type' => 'text',
                 ),
 
